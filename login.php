@@ -1,7 +1,7 @@
 <?php
 session_start();
 require 'vendor/autoload.php';
-require 'connection.php';
+require 'conection.php';
 
 $app = new \atk4\ui\App('Artur');
 $app->initLayout('Centered');

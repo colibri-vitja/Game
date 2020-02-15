@@ -8,11 +8,11 @@ $columns = $app->add ('Columns');
 $col_1 = $columns ->addColumn(3);
 $col_2 = $columns ->addColumn(10);
 $col_3 = $columns ->addColumn(3);
-$clicker = $col_2 ->add(["Button",$_SESSION["i"],"green fluid"]);
-$clicker ->on('click',function($m){
-  $_SESSION["i"] = $_SESSION["i"] + 1;
-  return $m;
-});
+$val = $col_2->add(['FormField/Line','45']);
+$clicker = $col_2 ->add(["Button","Click","green fluid"]);
+$clicker->js('click', new \atk4\ui\jsReLoad($val,['val' => $val->jsInput()->val(new \atk4\ui\jsExpression('parseInt([])+1', [$val->jsInput()->val()]), $val->jsInput()->focus())]));
 //$save = $col_2->add
 $exit = $app->add(["Button","exit","red"]);
 $exit->link(['exit']);
+$x3 = $col_3->add(["Button","Click x2","inverted violet"]);
+$SonEX = $col_3->add(["Button","+0.5 cli/sek","inverted violet"]);
