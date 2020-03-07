@@ -1,0 +1,4 @@
+$user = new User($db);
+$user->load($_SESSION['user_id']);
+$_SESSION['cookie'] = $user['clicker_count'];
+$user->unload();
